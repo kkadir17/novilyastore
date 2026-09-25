@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Novilya | Pratik Yaşam</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Üst Bilgi -->
+    <div class="top-bar">
+        Ücretsiz kargo fırsatını kaçırma! ✦
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <a href="#" class="logo">
+            NOV<span>İ</span>LYA
+        </a>
+
+        <nav class="nav-links">
+            <a href="#anasayfa">Ana Sayfa</a>
+            <a href="#urunler">Ürünler</a>
+            <a href="#kategoriler">Kategoriler</a>
+            <a href="#hakkimizda">Hakkımızda</a>
+            <a href="#iletisim">İletişim</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <button class="icon-btn" id="searchBtn" aria-label="Ara">
+                🔍
+            </button>
+
+            <button class="icon-btn" aria-label="Favoriler">
+                ♡
+            </button>
+
+            <button class="cart-btn" id="cartBtn">
+                🛒
+                <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- Arama -->
+    <div class="search-box" id="searchBox">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Ürün ara..."
+        >
+    </div>
+
+    <!-- Hero -->
+    <main>
+
+        <section class="hero" id="anasayfa">
+
+            <div class="hero-content">
+
+                <p class="hero-small">
+                    YENİ SEZON
+                </p>
+
+                <h1>
+                    Pratik Ol.<br>
+                    <span>Hayatını Kolaylaştır.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Modern tasarımlar, zamansız parçalar ve
+                    sana özel bir alışveriş deneyimi.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#urunler" class="primary-btn">
+                        Koleksiyonu Keşfet →
+                    </a>
+
+                    <a href="#kategoriler" class="secondary-btn">
+                        Kategoriler
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <div class="hero-card">
+                    <div class="hero-card-text">
+                        <small>NOVILYA</small>
+                        <strong>NEW<br>COLLECTION</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Kategoriler -->
+        <section class="categories" id="kategoriler">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">KEŞFET</p>
+                    <h2>Kategoriler</h2>
+                </div>
+
+                <p>
+                    Stilini tamamlayacak parçaları keşfet.
+                </p>
+            </div>
+
+            <div class="category-grid">
+
+                <div class="category-card category-one">
+                    <div>
+                        <span>01</span>
+                        <h3>Yeni Gelenler</h3>
+                        <a href="#urunler">Keşfet →</a>
+                    </div>
+                </div>
+
+                <div class="category-card category-two">
+                    <div>
+                        <span>02</span>
+                        <h3>Çok Satanlar</h3>
+                        <a href="#urunler">Keşfet →</a>
+                    </div>
+                </div>
+
+                <div class="category-card category-three">
+                    <div>
+                        <span>03</span>
+                        <h3>Özel Seçimler</h3>
+                        <a href="#urunler">Keşfet →</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Ürünler -->
+        <section class="products" id="urunler">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">NOVILYA SEÇKİSİ</p>
+                    <h2>Öne Çıkanlar</h2>
+                </div>
+
+                <a href="#" class="view-all">
+                    Tümünü Gör →
+                </a>
+
+            </div>
+
+
+            <div class="product-grid" id="productGrid">
+
+                <article class="product-card">
+
+                    <div class="product-image image-one">
+                        <span class="product-badge">Yeni</span>
+
+                        <button class="favorite-btn">
+                            ♡
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <p>Koleksiyon 01</p>
+                        <h3>Minimal Çanta</h3>
+
+                        <div class="product-bottom">
+                            <strong>1.299 TL</strong>
+
+                            <button
+                                class="add-cart"
+                                data-product="Minimal Çanta"
+                            >
+                                Sepete Ekle
+                            </button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="product-card">
+
+                    <div class="product-image image-two">
+
+                        <button class="favorite-btn">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+                        <p>Koleksiyon 02</p>
+                        <h3>Modern Sneaker</h3>
+
+                        <div class="product-bottom">
+                            <strong>2.499 TL</strong>
+
+                            <button
+                                class="add-cart"
+                                data-product="Modern Sneaker"
+                            >
+                                Sepete Ekle
+                            </button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="product-card">
+
+                    <div class="product-image image-three">
+                        <span class="product-badge">Popüler</span>
+
+                        <button class="favorite-btn">
+                            ♡
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <p>Koleksiyon 03</p>
+                        <h3>Premium Saat</h3>
+
+                        <div class="product-bottom">
+                            <strong>3.799 TL</strong>
+
+                            <button
+                                class="add-cart"
+                                data-product="Premium Saat"
+                            >
+                                Sepete Ekle
+                            </button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="product-card">
+
+                    <div class="product-image image-four">
+
+                        <button class="favorite-btn">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+                        <p>Koleksiyon 04</p>
+                        <h3>Signature Gözlük</h3>
+
+                        <div class="product-bottom">
+                            <strong>1.799 TL</strong>
+
+                            <button
+                                class="add-cart"
+                                data-product="Signature Gözlük"
+                            >
+                                Sepete Ekle
+                            </button>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Banner -->
+        <section class="promo">
+
+            <div>
+                <p>SADECE NOVILYA'DA</p>
+
+                <h2>
+                    Kendine ait<br>
+                    bir stil yarat.
+                </h2>
+
+                <a href="#urunler">
+                    Şimdi keşfet →
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- Hakkımızda -->
+        <section class="about" id="hakkimizda">
+
+            <div class="about-content">
+
+                <p class="section-label">
+                    NOVILYA HAKKINDA
+                </p>
+
+                <h2>
+                    Sıradanlıktan<br>
+                    biraz daha <em>uzak.</em>
+                </h2>
+
+                <p>
+                    Novilya, modern yaşamın estetik anlayışından
+                    ilham alan seçkin ürünleri bir araya getirir.
+                    Her detayda sadelik, kalite ve karakteri
+                    buluşturuyoruz.
+                </p>
+
+                <a href="#">
+                    Hikayemizi keşfet →
+                </a>
+
+            </div>
+
+            <div class="about-number">
+                <span>01</span>
+                <p>
+                    Modern<br>
+                    & özgün
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer id="iletisim">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+                <div class="logo">
+                    NOV<span>İ</span>LYA
+                </div>
+
+                <p>
+                    Tarzını keşfet. Kendini yansıt.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Mağaza</h4>
+                <a href="#urunler">Yeni Gelenler</a>
+                <a href="#urunler">Çok Satanlar</a>
+                <a href="#urunler">Koleksiyonlar</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Yardım</h4>
+                <a href="#">Kargo & Teslimat</a>
+                <a href="#">İade & Değişim</a>
+                <a href="#">Sık Sorulanlar</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>İletişim</h4>
+                <a href="mailto:info@novilya.com">
+                    info@novilya.com
+                </a>
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Novilya. Tüm hakları saklıdır.</span>
+            <span>Made with ♡</span>
+        </div>
+
+    </footer>
+
+
+    <!-- Sepet Paneli -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <aside class="cart-panel" id="cartPanel">
+
+        <div class="cart-header">
+            <h2>Sepetim</h2>
+
+            <button id="closeCart">
+                ×
+            </button>
+        </div>
+
+        <div id="cartItems" class="cart-items">
+            <p class="empty-cart">
+                Sepetiniz şu anda boş.
+            </p>
+        </div>
+
+        <div class="cart-footer">
+
+            <div>
+                <span>Toplam</span>
+                <strong id="cartTotal">0 TL</strong>
+            </div>
+
+            <button class="checkout-btn">
+                Siparişi Tamamla →
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
