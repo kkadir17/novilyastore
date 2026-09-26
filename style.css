@@ -324,17 +324,17 @@ button {
 }
 
 .category-one {
-    background-image: url("images/yenigelenler.png");
+    background-image: url("yenigelenler.png");
     background-size: cover;
     background-position: center;
 }
 .category-two {
-    background-image: url("images/coksatanlar.png");
+    background-image: url("coksatanlar.png");
     background-size: cover;
     background-position: center;
 }
 .category-three {
-    background-image: url("images/ozelsecimler.png");
+    background-image: url("ozelsecimler.png");
     background-size: cover;
     background-position: center;
 }
@@ -380,23 +380,23 @@ button {
 }
 
 .image-one {
-    background-image: url("images/minimalcanta.jpeg");
+    background-image: url("minimalcanta.jpeg");
     background-size: cover;
     background-position: center;
 }
 .image-two {
-    background-image: url("images/kabloduzenleyici.png");
+    background-image: url("kabloduzenleyici.png");
     background-size: cover;
     background-position: center;
 }
 
 .image-three {
-    background-image: url("images/minietiketyazici.png");
+    background-image: url("minietiketyazici.png");
     background-size: cover;
     background-position: center;
 }
 .image-four {
-    background-image: url("images/minimasafani.png");
+    background-image: url("minimasafani.png");
     background-size: cover;
     background-position: center;
 }
@@ -480,7 +480,7 @@ button {
             rgba(0, 0, 0, 0.35), 
             rgba(0, 0, 0, 0.35)
         ),
-        url("images/altfoto_cleanup.png") center/cover no-repeat;
+        url("altfoto_cleanup.png") center/cover no-repeat;
 }
 .promo p {
     font-size: 11px;
