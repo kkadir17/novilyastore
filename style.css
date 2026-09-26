@@ -324,15 +324,19 @@ button {
 }
 
 .category-one {
-    background: linear-gradient(145deg, #b8a28a, #695340);
+    background-image: url("images/yenigelenler.png");
+    background-size: cover;
+    background-position: center;
 }
-
 .category-two {
-    background: linear-gradient(145deg, #d0bca6, #907963);
+    background-image: url("images/coksatanlar.png");
+    background-size: cover;
+    background-position: center;
 }
-
 .category-three {
-    background: linear-gradient(145deg, #91806d, #403a35);
+    background-image: url("images/ozelsecimler.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .category-card div {
@@ -376,19 +380,25 @@ button {
 }
 
 .image-one {
-    background: linear-gradient(145deg, #d4c1aa, #80664e);
+    background-image: url("images/minimalcanta.jpeg");
+    background-size: cover;
+    background-position: center;
 }
-
 .image-two {
-    background: linear-gradient(145deg, #dedbd5, #96928b);
+    background-image: url("images/kabloduzenleyici.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .image-three {
-    background: linear-gradient(145deg, #bca995, #5c5147);
+    background-image: url("images/minietiketyazici.png");
+    background-size: cover;
+    background-position: center;
 }
-
 .image-four {
-    background: linear-gradient(145deg, #c8bdb0, #71675e);
+    background-image: url("images/minimasafani.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .product-badge {
