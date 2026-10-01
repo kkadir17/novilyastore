@@ -21,7 +21,7 @@ let cart = [];
 
 
 /* =========================
-   ARAMA
+   GELİŞMİŞ ARAMA
 ========================= */
 
 searchBtn.addEventListener("click", () => {
@@ -30,6 +30,86 @@ searchBtn.addEventListener("click", () => {
 
     if (searchBox.classList.contains("active")) {
         searchInput.focus();
+    } else {
+        searchInput.value = "";
+
+        document.querySelectorAll(".product-card").forEach(product => {
+            product.style.display = "";
+        });
+    }
+
+});
+
+
+searchInput.addEventListener("input", () => {
+
+    const searchValue = searchInput.value
+        .toLowerCase()
+        .trim();
+
+    const products = document.querySelectorAll(".product-card");
+
+    let foundProduct = false;
+
+    products.forEach(product => {
+
+        const productName = product
+            .querySelector("h3")
+            .textContent
+            .toLowerCase()
+            .trim();
+
+        const productInfo = product
+            .querySelector(".product-info")
+            .textContent
+            .toLowerCase();
+
+        if (
+            productName.includes(searchValue) ||
+            productInfo.includes(searchValue)
+        ) {
+
+            product.style.display = "";
+            foundProduct = true;
+
+        } else {
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+    /* Arama boşsa ürünlerin hepsini göster */
+    if (searchValue === "") {
+
+        products.forEach(product => {
+            product.style.display = "";
+        });
+
+    }
+
+});
+
+
+/* ENTER'a basınca ürünler bölümüne git */
+
+searchInput.addEventListener("keydown", (event) => {
+
+    if (event.key === "Enter") {
+
+        const searchValue = searchInput.value.trim();
+
+        if (searchValue !== "") {
+
+            document
+                .getElementById("urunler")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
     }
 
 });
