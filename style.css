@@ -328,11 +328,13 @@ button {
     background-size: cover;
     background-position: center;
 }
+
 .category-two {
     background-image: url("coksatanlar.png");
     background-size: cover;
     background-position: center;
 }
+
 .category-three {
     background-image: url("ozelsecimler.png");
     background-size: cover;
@@ -384,6 +386,7 @@ button {
     background-size: cover;
     background-position: center;
 }
+
 .image-two {
     background-image: url("kabloduzenleyici.png");
     background-size: cover;
@@ -395,6 +398,7 @@ button {
     background-size: cover;
     background-position: center;
 }
+
 .image-four {
     background-image: url("minimasafani.png");
     background-size: cover;
@@ -426,6 +430,12 @@ button {
 .favorite-btn:hover {
     background: var(--black);
     color: white;
+}
+
+.favorite-btn.favorite-active {
+    background: var(--black);
+    color: white;
+    transform: scale(1.05);
 }
 
 .product-info {
@@ -474,14 +484,14 @@ button {
     align-items: center;
     color: white;
 
-    /* Arka plan görseli ve okunabilirlik için koyu katman */
-    background: 
+    background:
         linear-gradient(
-            rgba(0, 0, 0, 0.35), 
+            rgba(0, 0, 0, 0.35),
             rgba(0, 0, 0, 0.35)
         ),
         url("altfoto_cleanup.png") center/cover no-repeat;
 }
+
 .promo p {
     font-size: 11px;
     letter-spacing: 3px;
@@ -605,7 +615,8 @@ footer {
 
 /* CART */
 
-.cart-overlay {
+.cart-overlay,
+.favorites-overlay {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,.4);
@@ -615,12 +626,14 @@ footer {
     transition: .3s;
 }
 
-.cart-overlay.active {
+.cart-overlay.active,
+.favorites-overlay.active {
     opacity: 1;
     visibility: visible;
 }
 
-.cart-panel {
+.cart-panel,
+.favorites-panel {
     position: fixed;
     right: -450px;
     top: 0;
@@ -635,11 +648,13 @@ footer {
     transition: .4s ease;
 }
 
-.cart-panel.active {
+.cart-panel.active,
+.favorites-panel.active {
     right: 0;
 }
 
-.cart-header {
+.cart-header,
+.favorites-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -647,38 +662,65 @@ footer {
     border-bottom: 1px solid #eee;
 }
 
-.cart-header h2 {
+.cart-header h2,
+.favorites-header h2 {
     font-family: "Playfair Display", serif;
     font-weight: 500;
 }
 
-.cart-header button {
+.cart-header button,
+.favorites-header button {
     background: transparent;
     font-size: 28px;
 }
 
-.cart-items {
+.cart-items,
+.favorite-items {
     flex: 1;
     padding: 25px 0;
     overflow-y: auto;
 }
 
-.empty-cart {
+.empty-cart,
+.empty-favorites {
     color: #999;
     text-align: center;
     margin-top: 50px;
     font-size: 13px;
 }
 
-.cart-item {
+.cart-item,
+.favorite-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 15px 0;
     border-bottom: 1px solid #eee;
 }
 
-.cart-item strong {
+.cart-item strong,
+.favorite-item strong {
     font-size: 13px;
+}
+
+.cart-item p,
+.favorite-item span {
+    color: #999;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.remove-cart,
+.remove-favorite {
+    background: transparent;
+    font-size: 22px;
+    color: #777;
+    padding: 5px;
+}
+
+.remove-cart:hover,
+.remove-favorite:hover {
+    color: var(--black);
 }
 
 .cart-footer {
@@ -727,6 +769,7 @@ footer {
     .about {
         padding: 90px 7%;
     }
+
 }
 
 @media (max-width: 600px) {
@@ -750,10 +793,6 @@ footer {
     .hero-image {
         min-height: 450px;
         padding: 25px;
-    }
-
-    .hero-card {
-        width: 85%;
     }
 
     .categories,
@@ -817,22 +856,17 @@ footer {
         flex-direction: column;
         gap: 10px;
     }
-}
 
-/* =========================
-   MOBİL İYİLEŞTİRMELERİ
-========================= */
+}
 
 @media (max-width: 600px) {
 
-    /* Genel */
     html,
     body {
         width: 100%;
         overflow-x: hidden;
     }
 
-    /* Üst bar */
     .top-bar {
         height: 30px;
         font-size: 9px;
@@ -841,7 +875,6 @@ footer {
         text-align: center;
     }
 
-    /* Navbar */
     .navbar {
         height: 65px;
         padding: 0 18px;
@@ -863,7 +896,6 @@ footer {
         font-size: 15px;
     }
 
-    /* Arama */
     .search-box {
         padding: 10px 18px;
     }
@@ -872,10 +904,6 @@ footer {
         padding: 12px;
         font-size: 14px;
     }
-
-    /* =========================
-       HERO
-    ========================= */
 
     .hero {
         display: flex;
@@ -917,7 +945,6 @@ footer {
         padding: 15px 20px;
     }
 
-    /* Hero görseli */
     .hero-image {
         min-height: 360px;
         height: 360px;
@@ -931,10 +958,6 @@ footer {
         object-fit: cover;
         display: block;
     }
-
-    /* =========================
-       KATEGORİLER
-    ========================= */
 
     .categories,
     .products {
@@ -968,10 +991,6 @@ footer {
         font-size: 28px;
     }
 
-    /* =========================
-       ÜRÜNLER
-    ========================= */
-
     .product-grid {
         grid-template-columns: 1fr;
         gap: 35px;
@@ -998,9 +1017,10 @@ footer {
         padding: 7px 0;
     }
 
-    /* =========================
-       PROMO
-    ========================= */
+    .favorite-btn {
+        width: 40px;
+        height: 40px;
+    }
 
     .promo {
         margin: 0 18px 70px;
@@ -1013,10 +1033,6 @@ footer {
         font-size: clamp(38px, 11vw, 50px);
         line-height: 1.05;
     }
-
-    /* =========================
-       HAKKIMIZDA
-    ========================= */
 
     .about {
         display: block;
@@ -1042,10 +1058,6 @@ footer {
     .about-number span {
         font-size: 70px;
     }
-
-    /* =========================
-       FOOTER
-    ========================= */
 
     footer {
         padding: 55px 22px 20px;
@@ -1073,32 +1085,29 @@ footer {
         font-size: 9px;
     }
 
-    /* =========================
-       SEPET
-    ========================= */
-
-    .cart-panel {
+    .cart-panel,
+    .favorites-panel {
         width: 100%;
         max-width: 100%;
         right: -100%;
         padding: 22px;
     }
 
-    .cart-panel.active {
+    .cart-panel.active,
+    .favorites-panel.active {
         right: 0;
     }
 
-    .cart-header {
+    .cart-header,
+    .favorites-header {
         padding-bottom: 18px;
     }
 
     .checkout-btn {
         padding: 16px;
     }
+
 }
-/* =========================================
-   MOBİL / TABLET RESPONSIVE
-========================================= */
 
 * {
     max-width: 100%;
@@ -1107,8 +1116,6 @@ footer {
 img {
     max-width: 100%;
 }
-
-/* TABLET */
 
 @media (max-width: 900px) {
 
@@ -1176,9 +1183,6 @@ img {
 
 }
 
-
-/* TELEFON */
-
 @media (max-width: 600px) {
 
     html,
@@ -1188,8 +1192,6 @@ img {
         overflow-x: hidden;
     }
 
-    /* TOP BAR */
-
     .top-bar {
         height: 30px;
         padding: 0 10px;
@@ -1197,9 +1199,6 @@ img {
         letter-spacing: 1px;
         text-align: center;
     }
-
-
-    /* NAVBAR */
 
     .navbar {
         height: 65px;
@@ -1222,9 +1221,6 @@ img {
         font-size: 15px;
     }
 
-
-    /* SEARCH */
-
     .search-box {
         padding: 10px 16px;
     }
@@ -1233,9 +1229,6 @@ img {
         padding: 13px;
         font-size: 14px;
     }
-
-
-    /* HERO */
 
     .hero {
         display: flex;
@@ -1278,9 +1271,6 @@ img {
         padding: 15px 20px;
     }
 
-
-    /* HERO IMAGE */
-
     .hero-image {
         width: 100%;
         height: 360px;
@@ -1294,9 +1284,6 @@ img {
         object-fit: cover;
         display: block;
     }
-
-
-    /* SECTIONS */
 
     .categories,
     .products {
@@ -1319,9 +1306,6 @@ img {
         line-height: 1.6;
     }
 
-
-    /* KATEGORİ */
-
     .category-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -1340,9 +1324,6 @@ img {
     .category-card h3 {
         font-size: 28px;
     }
-
-
-    /* ÜRÜNLER */
 
     .product-grid {
         grid-template-columns: 1fr;
@@ -1370,21 +1351,15 @@ img {
         font-size: 11px;
     }
 
-
-    /* FAVORİ */
-
     .favorite-btn {
         width: 40px;
         height: 40px;
     }
 
-    .favorite-active {
+    .favorite-btn.favorite-active {
         background: var(--black);
         color: white;
     }
-
-
-    /* PROMO */
 
     .promo {
         margin: 0 18px 70px;
@@ -1397,9 +1372,6 @@ img {
         font-size: clamp(38px, 11vw, 50px);
         line-height: 1.05;
     }
-
-
-    /* ABOUT */
 
     .about {
         display: block;
@@ -1425,9 +1397,6 @@ img {
     .about-number span {
         font-size: 70px;
     }
-
-
-    /* FOOTER */
 
     footer {
         padding: 55px 22px 20px;
@@ -1457,25 +1426,26 @@ img {
         font-size: 9px;
     }
 
-
-    /* SEPET */
-
-    .cart-panel {
+    .cart-panel,
+    .favorites-panel {
         width: 100%;
         max-width: 100%;
         right: -100%;
         padding: 22px;
     }
 
-    .cart-panel.active {
+    .cart-panel.active,
+    .favorites-panel.active {
         right: 0;
     }
 
-    .cart-header {
+    .cart-header,
+    .favorites-header {
         padding-bottom: 18px;
     }
 
-    .cart-header h2 {
+    .cart-header h2,
+    .favorites-header h2 {
         font-size: 24px;
     }
 
@@ -1488,9 +1458,6 @@ img {
     }
 
 }
-
-
-/* ÇOK KÜÇÜK TELEFONLAR */
 
 @media (max-width: 380px) {
 
