@@ -21,7 +21,7 @@ let cart = [];
 
 
 /* =========================
-   GELİŞMİŞ ARAMA
+   ARAMA
 ========================= */
 
 searchBtn.addEventListener("click", () => {
@@ -30,15 +30,112 @@ searchBtn.addEventListener("click", () => {
 
     if (searchBox.classList.contains("active")) {
         searchInput.focus();
-    } else {
-        searchInput.value = "";
-
-        document.querySelectorAll(".product-card").forEach(product => {
-            product.style.display = "";
-        });
     }
 
 });
+
+
+searchInput.addEventListener("input", () => {
+
+    const searchValue = searchInput.value
+        .toLowerCase()
+        .trim();
+
+    const products = document.querySelectorAll(".product-card");
+
+    /* Arama boşsa bütün ürünleri göster */
+    if (searchValue === "") {
+
+        products.forEach(product => {
+            product.style.display = "";
+        });
+
+        removeSearchMessage();
+        return;
+    }
+
+    let resultCount = 0;
+
+    products.forEach(product => {
+
+        const productName = product
+            .querySelector("h3")
+            .textContent
+            .toLowerCase()
+            .trim();
+
+        /* Ürün adında aranan kelime varsa göster */
+        if (productName.includes(searchValue)) {
+
+            product.style.display = "";
+            resultCount++;
+
+        } else {
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+
+    /* Hiç sonuç yoksa mesaj göster */
+    if (resultCount === 0) {
+
+        showSearchMessage(searchValue);
+
+    } else {
+
+        removeSearchMessage();
+
+    }
+
+});
+
+
+/* =========================
+   SONUÇ BULUNAMADI MESAJI
+========================= */
+
+function showSearchMessage(searchValue) {
+
+    removeSearchMessage();
+
+    const message = document.createElement("p");
+
+    message.id = "searchMessage";
+
+    message.textContent =
+        `"${searchValue}" için ürün bulunamadı.`;
+
+    message.style.textAlign = "center";
+    message.style.fontSize = "16px";
+    message.style.color = "#777";
+    message.style.padding = "40px 0";
+    message.style.gridColumn = "1 / -1";
+
+    const productGrid =
+        document.getElementById("productGrid");
+
+    productGrid.appendChild(message);
+
+}
+
+
+/* =========================
+   ARAMA MESAJINI SİL
+========================= */
+
+function removeSearchMessage() {
+
+    const message =
+        document.getElementById("searchMessage");
+
+    if (message) {
+        message.remove();
+    }
+
+}
 
 
 searchInput.addEventListener("input", () => {
