@@ -1176,3 +1176,11 @@ img {
         font-size: 35px;
     }
 }
+/* Footer logosu */
+.footer-brand .logo {
+    color: #ffffff;
+}
+
+.footer-brand .logo span {
+    color: var(--orange);
+}
