@@ -13,8 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <meta name="google-site-verification" content="TT_81Uou7Kz78h__YBYTCXxRhymAt3fMUZj_sH12rSs" />
+
+    <meta name="google-site-verification" content="TT_81Uou7Kz78h__YBYTCXxRhymAt3fMUZj_sH12rSs">
 </head>
+
 <body>
 
     <!-- Üst Bilgi -->
@@ -43,7 +45,8 @@
                 🔍
             </button>
 
-            <button class="icon-btn" aria-label="Favoriler">
+            <!-- FAVORİ BUTONU -->
+            <button class="icon-btn" id="favoritesBtn" aria-label="Favoriler">
                 ♡
             </button>
 
@@ -51,9 +54,6 @@
                 🛒
                 <span id="cartCount">0</span>
             </button>
-            
-</button>
-
 
         </div>
 
@@ -90,6 +90,7 @@
                 </p>
 
                 <div class="hero-buttons">
+
                     <a href="#urunler" class="primary-btn">
                         Koleksiyonu Keşfet →
                     </a>
@@ -97,18 +98,23 @@
                     <a href="#kategoriler" class="secondary-btn">
                         Kategoriler
                     </a>
+
                 </div>
 
             </div>
 
             <div class="hero-image">
-                <img src="baslangicfoto.png" alt="Novilya yeni sezon ürünleri">                        
+                <img src="baslangicfoto.png" alt="Novilya yeni sezon ürünleri">
             </div>
+
         </section>
+
+
         <!-- Kategoriler -->
         <section class="categories" id="kategoriler">
 
             <div class="section-heading">
+
                 <div>
                     <p class="section-label">KEŞFET</p>
                     <h2>Kategoriler</h2>
@@ -117,6 +123,7 @@
                 <p>
                     Hayatını kolaylaştırıcak parçaları keşfet.
                 </p>
+
             </div>
 
             <div class="category-grid">
@@ -169,117 +176,169 @@
 
             <div class="product-grid" id="productGrid">
 
+                <!-- ÜRÜN 1 -->
                 <article class="product-card">
 
                     <div class="product-image image-one">
-                        <span class="product-badge">Yeni</span>
 
-                        <button class="favorite-btn">
+                        <span class="product-badge">
+                            Yeni
+                        </span>
+
+                        <button class="favorite-btn" type="button">
                             ♡
                         </button>
+
                     </div>
 
                     <div class="product-info">
+
                         <p>Koleksiyon 01</p>
-                        <h3>Minimal Çanta</h3>
+
+                        <h3>
+                            Minimal Çanta
+                        </h3>
 
                         <div class="product-bottom">
-                            <strong>699 TL</strong>
+
+                            <strong>
+                                699 TL
+                            </strong>
 
                             <button
                                 class="add-cart"
                                 data-product="Minimal Çanta"
+                                type="button"
                             >
                                 Sepete Ekle
                             </button>
+
                         </div>
+
                     </div>
 
                 </article>
 
 
+                <!-- ÜRÜN 2 -->
                 <article class="product-card">
 
                     <div class="product-image image-two">
 
-                        <button class="favorite-btn">
+                        <button class="favorite-btn" type="button">
                             ♡
                         </button>
 
                     </div>
 
                     <div class="product-info">
+
                         <p>Koleksiyon 02</p>
-                        <h3>Kablo Düzenleyici Klips</h3>
+
+                        <h3>
+                            Kablo Düzenleyici Klips
+                        </h3>
 
                         <div class="product-bottom">
-                            <strong>599 TL</strong>
+
+                            <strong>
+                                599 TL
+                            </strong>
 
                             <button
                                 class="add-cart"
                                 data-product="Kablo Düzenleyici Klips"
+                                type="button"
                             >
                                 Sepete Ekle
                             </button>
+
                         </div>
+
                     </div>
 
                 </article>
 
 
+                <!-- ÜRÜN 3 -->
                 <article class="product-card">
 
                     <div class="product-image image-three">
-                        <span class="product-badge">Popüler</span>
 
-                        <button class="favorite-btn">
+                        <span class="product-badge">
+                            Popüler
+                        </span>
+
+                        <button class="favorite-btn" type="button">
                             ♡
                         </button>
+
                     </div>
 
                     <div class="product-info">
+
                         <p>Koleksiyon 03</p>
-                        <h3>Mini Etiket Yazıcı</h3>
+
+                        <h3>
+                            Mini Etiket Yazıcı
+                        </h3>
 
                         <div class="product-bottom">
-                            <strong>499 TL</strong>
+
+                            <strong>
+                                499 TL
+                            </strong>
 
                             <button
                                 class="add-cart"
                                 data-product="Mini Etiket Yazıcı"
+                                type="button"
                             >
                                 Sepete Ekle
                             </button>
+
                         </div>
+
                     </div>
 
                 </article>
 
 
+                <!-- ÜRÜN 4 -->
                 <article class="product-card">
 
                     <div class="product-image image-four">
 
-                        <button class="favorite-btn">
+                        <button class="favorite-btn" type="button">
                             ♡
                         </button>
 
                     </div>
 
                     <div class="product-info">
+
                         <p>Koleksiyon 04</p>
-                        <h3>Mini Masa Fanı</h3>
+
+                        <h3>
+                            Mini Masa Fanı
+                        </h3>
 
                         <div class="product-bottom">
-                            <strong>299 TL</strong>
+
+                            <strong>
+                                299 TL
+                            </strong>
 
                             <button
                                 class="add-cart"
                                 data-product="Mini Masa Fanı"
+                                type="button"
                             >
                                 Sepete Ekle
                             </button>
+
                         </div>
+
                     </div>
 
                 </article>
@@ -293,7 +352,10 @@
         <section class="promo">
 
             <div>
-                <p>SADECE NOVILYA'DA</p>
+
+                <p>
+                    SADECE NOVILYA'DA
+                </p>
 
                 <h2>
                     Kendine ait<br>
@@ -303,6 +365,7 @@
                 <a href="#urunler">
                     Şimdi keşfet →
                 </a>
+
             </div>
 
         </section>
@@ -336,11 +399,14 @@
             </div>
 
             <div class="about-number">
+
                 <span>01</span>
+
                 <p>
                     Pratik<br>
                     & Özgün
                 </p>
+
             </div>
 
         </section>
@@ -354,6 +420,7 @@
         <div class="footer-main">
 
             <div class="footer-brand">
+
                 <div class="logo">
                     NOV<span>İ</span>LYA
                 </div>
@@ -361,68 +428,146 @@
                 <p>
                     Kararını seç. Kendini yansıt.
                 </p>
+
             </div>
 
+
             <div class="footer-column">
+
                 <h4>Mağaza</h4>
-                <a href="#urunler">Yeni Gelenler</a>
-                <a href="#urunler">Çok Satanlar</a>
-                <a href="#urunler">Koleksiyonlar</a>
+
+                <a href="#urunler">
+                    Yeni Gelenler
+                </a>
+
+                <a href="#urunler">
+                    Çok Satanlar
+                </a>
+
+                <a href="#urunler">
+                    Koleksiyonlar
+                </a>
+
             </div>
 
+
             <div class="footer-column">
+
                 <h4>Yardım</h4>
-                <a href="#">Kargo & Teslimat</a>
-                <a href="#">İade & Değişim</a>
-                <a href="#">Sık Sorulanlar</a>
+
+                <a href="#">
+                    Kargo & Teslimat
+                </a>
+
+                <a href="#">
+                    İade & Değişim
+                </a>
+
+                <a href="#">
+                    Sık Sorulanlar
+                </a>
+
             </div>
 
+
             <div class="footer-column">
+
                 <h4>İletişim</h4>
+
                 <a href="mailto:info@novilya.com">
                     info@novilya.com
                 </a>
-                <a href="#">Instagram</a>
-                <a href="#">TikTok</a>
+
+                <a
+                    href="https://www.instagram.com/novilyastore/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+
+                <a href="#">
+                    TikTok
+                </a>
+
             </div>
 
         </div>
 
+
         <div class="footer-bottom">
-            <span>© 2026 Novilya. Tüm hakları saklıdır.</span>
-            <span>Made with ♡</span>
+
+            <span>
+                © 2026 Novilya. Tüm hakları saklıdır.
+            </span>
+
+            <span>
+                Made with ♡
+            </span>
+
         </div>
 
     </footer>
 
 
-    <!-- Sepet Paneli -->
-    <div class="cart-overlay" id="cartOverlay"></div>
+    <!-- =========================
+         SEPET PANELİ
+    ========================= -->
 
-    <aside class="cart-panel" id="cartPanel">
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+    ></div>
+
+    <aside
+        class="cart-panel"
+        id="cartPanel"
+    >
 
         <div class="cart-header">
-            <h2>Sepetim</h2>
 
-            <button id="closeCart">
+            <h2>
+                Sepetim
+            </h2>
+
+            <button
+                id="closeCart"
+                type="button"
+            >
                 ×
             </button>
+
         </div>
 
-        <div id="cartItems" class="cart-items">
+        <div
+            id="cartItems"
+            class="cart-items"
+        >
+
             <p class="empty-cart">
                 Sepetiniz şu anda boş.
             </p>
+
         </div>
 
         <div class="cart-footer">
 
             <div>
-                <span>Toplam</span>
-                <strong id="cartTotal">0 TL</strong>
+
+                <span>
+                    Toplam
+                </span>
+
+                <strong id="cartTotal">
+                    0 TL
+                </strong>
+
             </div>
 
-            <button class="checkout-btn">
+            <button
+                class="checkout-btn"
+                type="button"
+            >
                 Siparişi Tamamla →
             </button>
 
@@ -431,7 +576,44 @@
     </aside>
 
 
-    <script src="script.js"></script>
+    <!-- =========================
+         FAVORİLER PANELİ
+    ========================= -->
 
+    <div
+        class="favorites-overlay"
+        id="favoritesOverlay"
+    ></div>
+
+    <aside
+        class="favorites-panel"
+        id="favoritesPanel"
+    >
+
+        <div class="favorites-header">
+
+            <h2>
+                Favorilerim
+            </h2>
+
+            <button
+                id="closeFavorites"
+                type="button"
+                aria-label="Favorileri kapat"
+            >
+                ×
+            </button>
+        </div>
+        <div
+            id="favoriteItems"
+            class="favorite-items"
+        >
+
+            <p class="empty-favorites">
+                Henüz favori ürününüz yok.
+            </p>
+        </div>
+    </aside>
+    <script src="script.js"></script>
 </body>
 </html>
