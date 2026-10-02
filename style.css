@@ -1188,3 +1188,109 @@ img {
 .footer-brand .logo span {
     color: var(--orange);
 }
+.cart-product-image {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cart-product-image {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item-image {
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h4 {
+    margin: 0 0 6px;
+    font-size: 14px;
+}
+
+.cart-item-info strong {
+    font-size: 14px;
+}
+/* =========================
+   SEPET ÜRÜN GÖRÜNÜMÜ
+========================= */
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-product-image {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+}
+
+.cart-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cart-item-info strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.cart-item-info p {
+    margin: 0;
+    color: #777;
+    font-size: 12px;
+}
