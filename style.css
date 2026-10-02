@@ -713,6 +713,13 @@ footer {
 .favorites-header h2 {
     font-family: "DM Sans", sans-serif;
     font-weight: 800;
+    color: #111111;
+}
+
+.cart-header button,
+.favorites-header button {
+    background: transparent;
+    font-size: 28px;
 }
 
 .cart-header button,
@@ -1293,4 +1300,61 @@ img {
     margin: 0;
     color: #777;
     font-size: 12px;
+}
+/* =========================
+   FAVORİ ÜRÜN GÖRÜNÜMÜ
+========================= */
+
+.favorite-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.favorite-product-image {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+}
+
+.favorite-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.favorite-item-info strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.favorite-item-info span {
+    display: block;
+    color: #777;
+    font-size: 12px;
+}
+
+.remove-favorite {
+    background: #f3f3f3;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 6px;
+    font-size: 18px;
+    color: #777;
+    transition: .25s;
+}
+
+.remove-favorite:hover {
+    background: var(--orange);
+    color: #fff;
 }
