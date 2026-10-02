@@ -19,6 +19,26 @@ const favoriteItems = document.getElementById("favoriteItems");
 
 let cart = [];
 
+try {
+    cart = JSON.parse(
+        localStorage.getItem("novilyaCart") || "[]"
+    );
+
+    if (!Array.isArray(cart)) {
+        cart = [];
+    }
+
+} catch (error) {
+    cart = [];
+}
+
+function saveCart() {
+    localStorage.setItem(
+        "novilyaCart",
+        JSON.stringify(cart)
+    );
+}
+
 
 /* =========================
    ARAMA
@@ -385,6 +405,7 @@ function updateCart() {
 
     updateCartCount();
     updateCartTotal();
+    saveCart();
 
 }
 
@@ -595,9 +616,14 @@ document
 
                 /* FAVORİYE EKLE */
 
-                favorites.push({
-                    name: name,
-                    price: price
+                const productImage = card.querySelector(".product-image");
+
+                const image = getComputedStyle(productImage).backgroundImage;
+
+                    favorites.push({
+                        name: name,
+                        price: price,
+                        image: image
                 });
 
             }
@@ -686,7 +712,6 @@ function renderFavorites() {
 
     favoriteItems.innerHTML = "";
 
-
     if (favorites.length === 0) {
 
         favoriteItems.innerHTML = `
@@ -696,47 +721,51 @@ function renderFavorites() {
         `;
 
         return;
-
     }
-
 
     favorites.forEach((item, index) => {
 
-        const favoriteItem =
-            document.createElement("div");
+        const favoriteItem = document.createElement("div");
 
-        favoriteItem.className =
-            "favorite-item";
+        favoriteItem.className = "favorite-item";
 
-        favoriteItem.innerHTML = `
-            <div class="favorite-item-info">
+        // Ürün görseli
+        const imageDiv = document.createElement("div");
+        imageDiv.className = "favorite-product-image";
 
-                <strong>
-                    ${item.name}
-                </strong>
+        if (item.image) {
+            imageDiv.style.backgroundImage = item.image;
+        }
 
-                <span>
-                    ${item.price}
-                </span>
+        // Ürün bilgileri
+        const infoDiv = document.createElement("div");
+        infoDiv.className = "favorite-item-info";
 
-            </div>
-
-            <button
-                class="remove-favorite"
-                data-index="${index}"
-                type="button"
-                aria-label="${item.name} favorilerden çıkar"
-            >
-                ×
-            </button>
+        infoDiv.innerHTML = `
+            <strong>${item.name}</strong>
+            <span>${item.price}</span>
         `;
 
-        favoriteItems.appendChild(
-            favoriteItem
+        // Silme butonu
+        const removeButton = document.createElement("button");
+
+        removeButton.className = "remove-favorite";
+        removeButton.dataset.index = index;
+        removeButton.type = "button";
+        removeButton.textContent = "×";
+
+        removeButton.setAttribute(
+            "aria-label",
+            `${item.name} favorilerden çıkar`
         );
 
-    });
+        favoriteItem.appendChild(imageDiv);
+        favoriteItem.appendChild(infoDiv);
+        favoriteItem.appendChild(removeButton);
 
+        favoriteItems.appendChild(favoriteItem);
+
+    });
 }
 
 
