@@ -278,26 +278,31 @@ document.querySelectorAll(".add-cart").forEach(button => {
 
     button.addEventListener("click", () => {
 
-        const productCard =
-            button.closest(".product-card");
+        const productCard = button.closest(".product-card");
 
-        const name =
-            productCard
-                .querySelector("h3")
-                .textContent
-                .trim();
+        const name = productCard
+            .querySelector("h3")
+            .textContent
+            .trim();
 
-        const priceText =
-            productCard
-                .querySelector(".product-bottom strong")
-                .textContent
-                .trim();
+        const priceText = productCard
+            .querySelector(".product-bottom strong")
+            .textContent
+            .trim();
 
-        const price =
-            parseInt(priceText.replace(/\D/g, ""));
+        const price = parseInt(
+            priceText.replace(/\D/g, "")
+        );
 
-        const existingProduct =
-            cart.find(item => item.name === name);
+        /* Ürün görselini al */
+        const productImage = productCard.querySelector(".product-image");
+
+        const image = getComputedStyle(productImage)
+            .backgroundImage;
+
+        const existingProduct = cart.find(
+            item => item.name === name
+        );
 
         if (existingProduct) {
 
@@ -308,23 +313,18 @@ document.querySelectorAll(".add-cart").forEach(button => {
             cart.push({
                 name: name,
                 price: price,
-                quantity: 1
+                quantity: 1,
+                image: image
             });
 
         }
 
         updateCart();
 
-        openCart();
-
     });
 
 });
 
-
-/* =========================
-   SEPETİ GÜNCELLE
-========================= */
 
 function updateCart() {
 
@@ -342,26 +342,40 @@ function updateCart() {
 
         cart.forEach((item, index) => {
 
-            const cartItem =
-                document.createElement("div");
-
+            const cartItem = document.createElement("div");
             cartItem.className = "cart-item";
 
-            cartItem.innerHTML = `
-                <div>
-                    <strong>${item.name}</strong>
-                    <p>${item.quantity} × ${item.price} TL</p>
-                </div>
+            // Ürün resmi
+            const imageDiv = document.createElement("div");
+            imageDiv.className = "cart-product-image";
 
-                <button
-                    class="remove-cart"
-                    data-index="${index}"
-                    aria-label="${item.name} ürününü kaldır"
-                    type="button"
-                >
-                    ×
-                </button>
+            // Resmi doğrudan CSS özelliğine veriyoruz
+            imageDiv.style.backgroundImage = item.image;
+
+            // Ürün bilgileri
+            const infoDiv = document.createElement("div");
+            infoDiv.className = "cart-item-info";
+
+            infoDiv.innerHTML = `
+                <strong>${item.name}</strong>
+                <p>${item.quantity} × ${item.price} TL</p>
             `;
+
+            // Silme butonu
+            const removeButton = document.createElement("button");
+            removeButton.className = "remove-cart";
+            removeButton.dataset.index = index;
+            removeButton.type = "button";
+            removeButton.textContent = "×";
+            removeButton.setAttribute(
+                "aria-label",
+                `${item.name} ürününü kaldır`
+            );
+
+            // Hepsini sepete ekle
+            cartItem.appendChild(imageDiv);
+            cartItem.appendChild(infoDiv);
+            cartItem.appendChild(removeButton);
 
             cartItems.appendChild(cartItem);
 
@@ -789,3 +803,23 @@ updateCart();
 updateFavoriteButtons();
 
 renderFavorites();
+
+/* =========================
+   SHOPIER ÖDEME
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const checkoutBtn = document.querySelector(".checkout-btn");
+
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener("click", () => {
+            if (cart.length === 0) {
+                alert("Sepetiniz boş.");
+                return;
+            }
+
+            window.location.href = "https://www.shopier.com/novilyastore/51437392";
+        });
+    }
+});
+
